@@ -1,10 +1,8 @@
 .headline {
-  position: absolute;
+  position: relative;
   z-index: 3;
-  top: 11%;
-  left: 10%;
   width: 80%;
-  margin: 0;
+  margin: 17cqw auto 14cqw;
   text-align: center;
   font-family: 'Baskerville', 'Times New Roman', 'Songti TC', serif;
   font-weight: 400;

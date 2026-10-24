@@ -1,3 +1,5 @@
-.letter { position: absolute; z-index: 2; left: 12%; top: 29%; width: 76%; height: 45%; padding: 7% 8%; background: #fff9edee; border-radius: 49% 49% 2px 2px / 14% 14% 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
-.writing-lines { position: absolute; inset: 27% 10% 12%; pointer-events: none; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(20% - 1px), #978c9e22 calc(20% - 1px), #978c9e22 20%); }
-.letter-message { position: relative; height: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-family: 'Songti TC', serif; font-size: 3cqw; line-height: 1.9; }
+.letter { --letter-font-size: clamp(16px, 3.4cqw, 18px); --letter-line-height: 1.95; position: relative; z-index: 2; width: 84%; margin: 0 auto 44cqw; padding: 11cqw 6cqw 9cqw; background: #fff9edf5; border-radius: 49% 49% 2px 2px / 6cqw 6cqw 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
+.writing-lines { position: absolute; inset: 11cqw 6cqw 9cqw; pointer-events: none; font-size: var(--letter-font-size); background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--letter-line-height) * 1em - 1px), #978c9e16 calc(var(--letter-line-height) * 1em - 1px), #978c9e16 calc(var(--letter-line-height) * 1em)); }
+.letter-message { position: relative; white-space: pre-wrap; overflow-wrap: anywhere; font-family: 'Songti TC', serif; font-size: var(--letter-font-size); line-height: var(--letter-line-height); }
+.letter-sticker-anchor { display: inline-flex; align-items: center; gap: .3em; vertical-align: middle; }
+.letter-sticker { width: 1.65em; height: 1.65em; object-fit: contain; mix-blend-mode: multiply; }

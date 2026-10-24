@@ -12,7 +12,7 @@ card.append(
   createBackground(cardContent.background),
   createTitle(cardContent.title),
   ...(cardContent.subtitle ? [createSubtitle(cardContent.subtitle)] : []),
-  createLetter(cardContent.letter),
+  createLetter(cardContent.letter, cardContent.letterSticker),
   createAlbum(cardContent.photos),
   createCharacter(cardContent.character),
   createDecorations(),

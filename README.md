@@ -2,11 +2,11 @@
 
 純 HTML、CSS、JavaScript 的靜態網頁，不需要安裝套件或建置。
 
-在專案資料夾執行 `python3 -m http.server 8000 --bind 127.0.0.1`，開啟 http://localhost:8000/ 預覽。JavaScript 模組需要透過 HTTP 預覽。
+在專案資料夾執行 `python3 -m http.server 3000 --bind 127.0.0.1`，開啟 http://localhost:3000/ 預覽。JavaScript 模組需要透過 HTTP 預覽。
 
 ## 修改內容
 
-`card-content.js` 集中管理背景圖片、標題、副標題、底部文字、信件、庫洛米圖片與相簿順序。信件目前留白，在 `letter` 填入文字即可；多行內容可使用 JavaScript 的反引號字串。
+`card-content.js` 集中管理背景圖片、標題、副標題、底部文字、信件、庫洛米圖片與相簿順序。修改 `letter` 即可更新信件；多行內容可使用 JavaScript 的反引號字串。`letterSticker` 設定貼圖與要接在哪句文字之後。信紙隨文字自然增高，手機內文至少 16px，整封信透過頁面捲動閱讀。
 
 相簿依 `us/010.jpg` 到 `us/440.jpg` 排列，第一張與原草圖相同。手機可在相框照片或放大照片上左滑下一張、右滑上一張；上下滑動保留捲動功能。也可使用前後按鈕、在相簿取得焦點時使用鍵盤左右鍵，或點擊照片放大；按 Escape 關閉放大畫面。照片按需載入。
 
