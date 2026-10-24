@@ -1,0 +1,5 @@
+.DS_Store
+.playwright-mcp/
+us-originals-*.zip
+us-import-originals-*.zip
+us/duplicates/

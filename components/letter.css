@@ -1,0 +1,3 @@
+.letter { position: absolute; z-index: 2; left: 12%; top: 29%; width: 76%; height: 45%; padding: 7% 8%; background: #fff9edee; border-radius: 49% 49% 2px 2px / 14% 14% 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
+.writing-lines { position: absolute; inset: 27% 10% 12%; pointer-events: none; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(20% - 1px), #978c9e22 calc(20% - 1px), #978c9e22 20%); }
+.letter-message { position: relative; height: 100%; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-family: 'Songti TC', serif; font-size: 3cqw; line-height: 1.9; }
