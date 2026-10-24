@@ -2,8 +2,8 @@ import { enableSwipe } from './album-swipe.js';
 import { createViewer } from './album-viewer.js';
 import { loadPhoto, warmThumbnails } from './photo-loader.js';
 
-/** @param {{src: string, thumbnailSrc: string, alt: string}[]} photos @param {{src: string}} background @returns {HTMLElement} */
-export function createAlbum(photos, background) {
+/** @param {{src: string, thumbnailSrc: string, alt: string}[]} photos @param {{src: string}} background @param {ReturnType<import('./music.js').createMusic>} [music] @returns {HTMLElement} */
+export function createAlbum(photos, background, music) {
   const album = document.createElement('section');
   album.className = 'album';
   album.setAttribute('aria-label', '我們的相簿');
@@ -19,7 +19,12 @@ export function createAlbum(photos, background) {
   const thumbnail = album.querySelector('.album-photo');
   const count = album.querySelector('.album-count');
   const opener = album.querySelector('.album-open');
-  const viewer = createViewer(photos, selectPhoto, background);
+  const viewer = createViewer(photos, selectPhoto, background, music?.createButton());
+  if (music) {
+    viewer.dialog.addEventListener('close', () => {
+      if (!viewer.dialog.open) music.setScene('card');
+    });
+  }
   let index = 0;
   let renderVersion = 0;
 
@@ -56,7 +61,10 @@ export function createAlbum(photos, background) {
     changePhoto(event.key === 'ArrowLeft' ? -1 : 1);
   });
   enableSwipe(opener, changePhoto);
-  opener.addEventListener('click', () => viewer.show(index));
+  opener.addEventListener('click', () => {
+    viewer.show(index);
+    music?.setScene('album');
+  });
   void selectPhoto(0);
   warmThumbnails(photos);
   // 放在相框外，避免相框的旋轉影響全螢幕檢視。

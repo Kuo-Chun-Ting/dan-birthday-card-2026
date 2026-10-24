@@ -5,6 +5,10 @@ export const cardContent = {
     alt: '粉紫、桃紅與嫩綠交疊的作品細節',
   },
   title: { greeting: 'Happy Birthday Dan' },
+  music: {
+    card: './assets/audio/verse.mp3',
+    album: './assets/audio/chorus.mp3',
+  },
   albumBackground: {
     src: './assets/album-background.jpg',
   },

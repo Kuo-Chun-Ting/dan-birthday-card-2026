@@ -5,6 +5,7 @@
 @import './components/album.css';
 @import './components/character.css';
 @import './components/decorations.css';
+@import './components/music.css';
 
 * { box-sizing: border-box; }
 body { margin: 0; background: #f4f1eb; color: #3a3044; font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', sans-serif; }

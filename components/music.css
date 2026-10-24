@@ -1,0 +1,34 @@
+.music-toggle,
+.album-viewer .music-toggle {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% - 10px);
+  right: -14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 14px;
+  border: 0;
+  border-radius: 22px;
+  background: transparent;
+  color: #fff8e9;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  pointer-events: auto;
+}
+.music-toggle svg,
+.album-viewer .music-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.music-toggle[data-loading="true"] { opacity: .65; }
+.music-toggle[data-playing="true"] .music-mute-mark { display: none; }
+.album-viewer .music-toggle { top: auto; right: auto; color: #472b53; }
