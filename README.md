@@ -41,6 +41,6 @@
 
 ## 之後發布
 
-使用相對路徑，可部署在 GitHub Pages 的專案網址下。網頁需要 `index.html`、`card.js`、`card-content.js`、`styles.css`、`components/`、`assets/`（含 45 張網頁用照片）和使用中的 `artwork/article2.jpg`。
+使用相對路徑，可部署在 GitHub Pages 的專案網址下。網頁需要 `index.html`、`card.js`、`card-content.js`、`styles.css`、`components/`、`assets/`（含 45 張網頁用照片）和使用中的 `artwork/artwork2.jpg`。
 
 本機備份 ZIP、`us/duplicates/` 與 CSV 對照表不供網頁使用，發布時不需要上傳。

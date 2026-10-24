@@ -1,7 +1,7 @@
 // 文字、圖片與相簿順序集中在這裡；各元件的外觀在 components/。
 export const cardContent = {
   background: {
-    src: './artwork/article2.jpg',
+    src: './artwork/artwork2.jpg',
     alt: '粉紫、桃紅與嫩綠交疊的作品細節',
   },
   title: { greeting: 'Happy Birthday Dan' },
