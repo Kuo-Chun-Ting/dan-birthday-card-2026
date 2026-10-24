@@ -160,18 +160,16 @@ export function createMusic(tracks) {
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'music-toggle';
-      const maskId = `music-note-mask-${buttons.length}`;
-      button.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">
-        <defs><mask id="${maskId}">
-          <rect width="24" height="24" fill="white"/>
-          <path class="music-mute-mark" d="M3 3 21 21" stroke="black" stroke-width="5"/>
-        </mask></defs>
-        <g mask="url(#${maskId})">
-          <path d="M9 17V5l11-2v12M9 8l11-2"/>
-          <ellipse cx="6" cy="17" rx="3" ry="2" fill="currentColor"/>
-          <ellipse cx="17" cy="15" rx="3" ry="2" fill="currentColor"/>
-        </g>
-        <path class="music-mute-mark" d="M3 3 21 21"/>
+      button.innerHTML = `<svg class="music-icon-playing" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 17V5l11-2v12M9 8l11-2"/>
+        <ellipse cx="6" cy="17" rx="3" ry="2" fill="currentColor"/>
+        <ellipse cx="17" cy="15" rx="3" ry="2" fill="currentColor"/>
+      </svg>
+      <svg class="music-icon-muted" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 17v-4M9 5l11-2v12M13 7.27 20 6"/>
+        <ellipse cx="6" cy="17" rx="3" ry="2" fill="currentColor"/>
+        <ellipse cx="17" cy="15" rx="3" ry="2" fill="currentColor"/>
+        <path d="M3 3 21 21"/>
       </svg>`;
       button.addEventListener('click', () => { void toggle(); });
       buttons.push(button);

@@ -30,5 +30,6 @@
   stroke-linejoin: round;
 }
 .music-toggle[data-loading="true"] { opacity: .65; }
-.music-toggle[data-playing="true"] .music-mute-mark { display: none; }
+.music-toggle[data-playing="false"] .music-icon-playing,
+.music-toggle[data-playing="true"] .music-icon-muted { display: none; }
 .album-viewer .music-toggle { top: auto; right: auto; color: #472b53; }
