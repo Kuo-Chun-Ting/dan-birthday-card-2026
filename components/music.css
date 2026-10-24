@@ -32,4 +32,4 @@
 .music-toggle[data-loading="true"] { opacity: .65; }
 .music-toggle[data-playing="false"] .music-icon-playing,
 .music-toggle[data-playing="true"] .music-icon-muted { display: none; }
-.album-viewer .music-toggle { top: auto; right: auto; color: #472b53; }
+.album-viewer .music-toggle { top: calc(92% - 22px); right: calc(15% - 22px); color: #472b53; }

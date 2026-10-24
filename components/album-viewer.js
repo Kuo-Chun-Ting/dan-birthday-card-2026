@@ -19,29 +19,7 @@ export function createViewer(photos, onSelect, background, musicButton) {
   let index = 0;
   let settleTimer;
   const composition = dialog.querySelector('.viewer-composition');
-  if (musicButton) {
-    musicButton.hidden = true;
-    composition.append(musicButton);
-    const observer = new ResizeObserver(positionMusicButton);
-    observer.observe(composition);
-    for (const slide of slides) {
-      const image = slide.querySelector('img');
-      observer.observe(image);
-      image.addEventListener('load', positionMusicButton);
-    }
-  }
-
-  /** @returns {void} */
-  function positionMusicButton() {
-    if (!musicButton) return;
-    musicButton.hidden = !dialog.open || !slides[index].classList.contains('has-photo');
-    if (musicButton.hidden) return;
-    const photo = slides[index].querySelector('img').getBoundingClientRect();
-    const bounds = composition.getBoundingClientRect();
-    // A 16px note aligns with the frame edge inside a 44px touch target.
-    musicButton.style.left = `${photo.right - bounds.left - 30}px`;
-    musicButton.style.top = `${photo.bottom - bounds.top - 10}px`;
-  }
+  if (musicButton) composition.append(musicButton);
 
   /** @param {number} selected @returns {void} */
   function selectPhoto(selected) {
@@ -55,7 +33,6 @@ export function createViewer(photos, onSelect, background, musicButton) {
       void showPreview(neighbor);
     }
     onSelect(index);
-    positionMusicButton();
   }
 
   /** @param {number} selected @returns {Promise<void>} */
@@ -67,7 +44,6 @@ export function createViewer(photos, onSelect, background, musicButton) {
       await loadPhoto(photo.thumbnailSrc);
       if (!slide.dataset.full) slide.querySelector('img').src = photo.thumbnailSrc;
       slide.classList.add('has-photo');
-      positionMusicButton();
     } catch {
       // 清晰照片仍可獨立載入；保留此頁的佔位提示。
     }
@@ -84,7 +60,6 @@ export function createViewer(photos, onSelect, background, musicButton) {
       slide.querySelector('img').src = photo.src;
       slide.dataset.full = 'true';
       slide.classList.add('has-photo');
-      positionMusicButton();
       if (index !== selected || !dialog.open) return;
       status.textContent = '';
       retry.hidden = true;
@@ -102,7 +77,6 @@ export function createViewer(photos, onSelect, background, musicButton) {
     selectPhoto(selected);
     track.scrollTo({ left: slides[index].offsetLeft, behavior: 'instant' });
     void showFullPhoto();
-    positionMusicButton();
   }
 
   track.addEventListener('scroll', () => {
@@ -111,7 +85,6 @@ export function createViewer(photos, onSelect, background, musicButton) {
       Math.abs(slide.offsetLeft - track.scrollLeft) <
         Math.abs(slides[nearest].offsetLeft - track.scrollLeft) ? i : nearest, 0);
     if (selected !== index) selectPhoto(selected);
-    positionMusicButton();
     // 手指滑動時先顯示縮圖，停止滑動後才下載清晰照片。
     clearTimeout(settleTimer);
     settleTimer = setTimeout(showFullPhoto, 140);
