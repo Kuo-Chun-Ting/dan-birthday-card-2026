@@ -1,4 +1,4 @@
-.album { position: absolute; z-index: 4; width: 26%; height: 28cqw; bottom: 4cqw; left: 12%; padding: 1.5% 1.5% 4.5%; background: #fff8e9; transform: rotate(-7deg); box-shadow: 0 3px 10px #3b2e4533; }
+.album { position: absolute; z-index: 4; width: 36%; height: 38cqw; bottom: 4cqw; left: 10%; padding: 1.5% 1.5% 4.5%; background: #fff8e9; transform: rotate(-7deg); box-shadow: 0 3px 10px #3b2e4533; }
 .album-open { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #eee6e5; cursor: zoom-in; }
 .album-photo { width: 100%; height: 100%; object-fit: contain; }
 .album[aria-busy="true"] .album-photo, .album-viewer[aria-busy="true"] .viewer-photo { opacity: .45; }
