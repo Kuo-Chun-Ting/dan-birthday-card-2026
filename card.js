@@ -13,7 +13,7 @@ card.append(
   createTitle(cardContent.title),
   ...(cardContent.subtitle ? [createSubtitle(cardContent.subtitle)] : []),
   createLetter(cardContent.letter, cardContent.letterSticker),
-  createAlbum(cardContent.photos),
+  createAlbum(cardContent.photos, cardContent.albumBackground),
   createCharacter(cardContent.character),
   createDecorations(),
   ...(cardContent.footer ? [createSubtitle(cardContent.footer, 'footer-note')] : []),

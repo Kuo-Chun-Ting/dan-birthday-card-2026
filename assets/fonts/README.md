@@ -9,3 +9,7 @@
 - 完整授權見 `letter-handwriting-license.txt`。
 
 修改信件文字後，應檢查字型覆蓋；新增用字需從來源字型重新產生 WOFF2 子集，否則會以系統字型顯示缺少的字。
+
+## 標題字體
+
+外卡「Happy Birthday Dan」與相簿「Along the Way」共用 Almendra Regular 400，字型為 `almendra-regular.ttf`，由網站本身提供。來源為 Google Fonts 的 Almendra，設計者 Ana Sanfelippo；SIL Open Font License 見 `almendra-license.txt`。外卡保留奶油白色，相簿為深紫色。

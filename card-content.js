@@ -5,6 +5,9 @@ export const cardContent = {
     alt: '粉紫、桃紅與嫩綠交疊的作品細節',
   },
   title: { greeting: 'Happy Birthday Dan' },
+  albumBackground: {
+    src: './assets/album-background.jpg',
+  },
   subtitle: '',
   footer: '',
   letter: `陳丹：
@@ -26,11 +29,12 @@ export const cardContent = {
     alt: '開心舉起雙手的三眼怪貼圖',
   },
   character: {
-    src: './assets/kuromi-two-brushes.png',
+    src: './assets/kuromi.webp',
     alt: '同一隻手握著桃紅與螢光綠畫筆的庫洛米',
   },
   photos: Array.from({ length: 45 }, (_, index) => ({
     src: `./assets/photos/${String((index + 1) * 10).padStart(3, '0')}.webp`,
+    thumbnailSrc: `./assets/photos/thumbs/${String((index + 1) * 10).padStart(3, '0')}.webp`,
     alt: index === 0 ? '我們在作品前抱著花束的合照' : `我們的合照 ${index + 1}`,
   })),
 };

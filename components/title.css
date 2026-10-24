@@ -1,10 +1,18 @@
+@font-face {
+  font-family: 'Almendra';
+  src: url('../assets/fonts/almendra-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 .headline {
   position: relative;
   z-index: 3;
   width: 90%;
   margin: 6cqw auto 3cqw;
   text-align: center;
-  font-family: 'Baskerville', 'Times New Roman', 'Songti TC', serif;
+  font-family: 'Almendra', 'Baskerville', serif;
   font-weight: 400;
   font-size: 7.6cqw;
   line-height: 1.3;

@@ -78,7 +78,7 @@
       card.setAttribute('aria-label', `${option.name}卡片預覽`);
       card.append(
         createBackground(cardContent.background), createTitle(cardContent.title),
-        createLetter(cardContent.letter, cardContent.letterSticker), createAlbum(cardContent.photos),
+        createLetter(cardContent.letter, cardContent.letterSticker), createAlbum(cardContent.photos, cardContent.albumBackground),
         createCharacter(cardContent.character), createDecorations(),
       );
       const source = document.createElement('a');
