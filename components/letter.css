@@ -1,5 +1,6 @@
-.letter { --letter-font-size: clamp(11.5px, 3.2cqw, 16px); --letter-line-height: 1.5; position: relative; z-index: 2; width: 76%; margin: 0 auto 43cqw; padding: 3.5cqw; background: #fff9edf5; border-radius: 49% 49% 2px 2px / 4cqw 4cqw 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
-.letter-message { position: relative; white-space: pre-wrap; overflow-wrap: anywhere; font-family: 'Songti TC', serif; font-size: var(--letter-font-size); line-height: var(--letter-line-height); }
+@font-face { font-family: 'Birthday Letter Handwriting'; src: url('../assets/fonts/letter-handwriting.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+.letter { --letter-font-size: clamp(11px, 3cqw, 15.5px); --letter-line-height: 1.55; position: relative; z-index: 2; width: 72%; margin: 0 auto 46cqw; padding: 3.5cqw; background: #fff9edf5; border-radius: 49% 49% 2px 2px / 4cqw 4cqw 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
+.letter-message { position: relative; white-space: pre-wrap; overflow-wrap: anywhere; font-family: 'Birthday Letter Handwriting', 'Songti TC', serif; font-size: var(--letter-font-size); line-height: var(--letter-line-height); }
 .letter-message p { margin: 0; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--letter-line-height) * 1em - 1px), #978c9e24 calc(var(--letter-line-height) * 1em - 1px), #978c9e24 calc(var(--letter-line-height) * 1em)); }
 .letter-message p + p { margin-top: .55em; }
 .letter-sticker-anchor { position: relative; display: inline-block; padding-right: 1.95em; vertical-align: baseline; }
