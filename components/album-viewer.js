@@ -72,14 +72,15 @@ export function createViewer(photos, onSelect, background) {
   /** @param {number} selected @returns {void} */
   function goTo(selected) {
     selectPhoto(selected);
-    track.scrollTo({ left: index * track.clientWidth, behavior: 'instant' });
+    track.scrollTo({ left: slides[index].offsetLeft, behavior: 'instant' });
     void showFullPhoto();
   }
 
   track.addEventListener('scroll', () => {
     if (!dialog.open || track.clientWidth === 0) return;
-    const selected = Math.max(0, Math.min(photos.length - 1,
-      Math.round(track.scrollLeft / track.clientWidth)));
+    const selected = slides.reduce((nearest, slide, i) =>
+      Math.abs(slide.offsetLeft - track.scrollLeft) <
+        Math.abs(slides[nearest].offsetLeft - track.scrollLeft) ? i : nearest, 0);
     if (selected !== index) selectPhoto(selected);
     // 手指滑動時先顯示縮圖，停止滑動後才下載清晰照片。
     clearTimeout(settleTimer);
@@ -105,7 +106,7 @@ export function createViewer(photos, onSelect, background) {
   dialog.querySelector('.viewer-close').addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => clearTimeout(settleTimer));
   new ResizeObserver(() => {
-    if (dialog.open) track.scrollTo({ left: index * track.clientWidth, behavior: 'instant' });
+    if (dialog.open) track.scrollTo({ left: slides[index].offsetLeft, behavior: 'instant' });
   }).observe(track);
 
   return {
