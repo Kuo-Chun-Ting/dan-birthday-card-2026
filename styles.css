@@ -8,10 +8,9 @@
 
 * { box-sizing: border-box; }
 body { margin: 0; background: #f4f1eb; color: #3a3044; font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', sans-serif; }
-main { min-height: 100svh; display: grid; place-items: center; padding: 28px 22px; }
+main { min-height: 100svh; display: grid; place-items: center; padding: 12px; }
 .card { width: min(100%, 500px); position: relative; overflow: hidden; container-type: inline-size; background: #c4b2d7; box-shadow: 0 10px 24px #30252b1c; }
 .card img { display: block; }
 button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulation; }
 button:focus-visible { outline: 3px solid #8356a1; outline-offset: 3px; }
 body:has(dialog[open]) { overflow: hidden; }
-@media (max-width: 400px) { main { padding: 18px 12px; } }

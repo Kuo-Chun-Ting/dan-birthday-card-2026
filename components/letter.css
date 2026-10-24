@@ -1,5 +1,7 @@
-.letter { --letter-font-size: clamp(16px, 3.4cqw, 18px); --letter-line-height: 1.95; position: relative; z-index: 2; width: 84%; margin: 0 auto 44cqw; padding: 11cqw 6cqw 9cqw; background: #fff9edf5; border-radius: 49% 49% 2px 2px / 6cqw 6cqw 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
-.writing-lines { position: absolute; inset: 11cqw 6cqw 9cqw; pointer-events: none; font-size: var(--letter-font-size); background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--letter-line-height) * 1em - 1px), #978c9e16 calc(var(--letter-line-height) * 1em - 1px), #978c9e16 calc(var(--letter-line-height) * 1em)); }
+.letter { --letter-font-size: clamp(12px, 3.5cqw, 17.5px); --letter-line-height: 1.5; position: relative; z-index: 2; width: 86%; margin: 0 auto 32cqw; padding: 5cqw; background: #fff9edf5; border-radius: 49% 49% 2px 2px / 4cqw 4cqw 2px 2px; box-shadow: 0 4px 24px #5d4a6d22; }
+.writing-lines { position: absolute; inset: 5cqw; pointer-events: none; font-size: var(--letter-font-size); background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--letter-line-height) * 1em - 1px), #978c9e16 calc(var(--letter-line-height) * 1em - 1px), #978c9e16 calc(var(--letter-line-height) * 1em)); }
 .letter-message { position: relative; white-space: pre-wrap; overflow-wrap: anywhere; font-family: 'Songti TC', serif; font-size: var(--letter-font-size); line-height: var(--letter-line-height); }
+.letter-message p { margin: 0; }
+.letter-message p + p { margin-top: .7em; }
 .letter-sticker-anchor { display: inline-flex; align-items: center; gap: .3em; vertical-align: middle; }
 .letter-sticker { width: 1.65em; height: 1.65em; object-fit: contain; mix-blend-mode: multiply; }

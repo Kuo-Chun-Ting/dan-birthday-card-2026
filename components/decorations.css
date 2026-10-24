@@ -1,5 +1,5 @@
 .decorations { pointer-events: none; }
 .star { position: absolute; z-index: 4; font-family: Georgia, serif; line-height: 1; }
-.star-one { top: 30cqw; right: 10%; font-size: 12cqw; color: #deed9b; }
-.star-two { bottom: 12cqw; left: 47%; font-size: 7cqw; color: #fff8e6; }
+.star-one { top: 17cqw; right: 5%; font-size: 8cqw; color: #deed9b; }
+.star-two { bottom: 8cqw; left: 47%; font-size: 6cqw; color: #fff8e6; }
 .border { position: absolute; inset: 3cqw; border: 1px solid #f5e9d7aa; z-index: 6; }

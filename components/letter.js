@@ -8,7 +8,15 @@ export function createLetter(text, sticker) {
   lines.setAttribute('aria-hidden', 'true');
   const message = document.createElement('div');
   message.className = 'letter-message';
-  message.textContent = text;
+  message.append(...text.split('\n\n').map(paragraph => createLetterParagraph(paragraph, sticker)));
+  letter.append(lines, message);
+  return letter;
+}
+
+/** @param {string} text @param {{after: string, src: string, alt: string}} [sticker] @returns {HTMLParagraphElement} */
+function createLetterParagraph(text, sticker) {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = text;
   const stickerIndex = sticker ? text.indexOf(sticker.after) : -1;
   if (stickerIndex !== -1) {
     const insertionPoint = stickerIndex + sticker.after.length;
@@ -21,8 +29,7 @@ export function createLetter(text, sticker) {
     const greeting = document.createElement('span');
     greeting.className = 'letter-sticker-anchor';
     greeting.append(sticker.after, image);
-    message.replaceChildren(text.slice(0, stickerIndex), greeting, text.slice(insertionPoint));
+    paragraph.replaceChildren(text.slice(0, stickerIndex), greeting, text.slice(insertionPoint));
   }
-  letter.append(lines, message);
-  return letter;
+  return paragraph;
 }
