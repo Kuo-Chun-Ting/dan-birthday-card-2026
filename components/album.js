@@ -18,18 +18,55 @@ export function createAlbum(photos) {
   const thumbnail = album.querySelector('.album-photo');
   const fullImage = dialog.querySelector('img');
   let index = 0;
+  let renderVersion = 0;
+  /** @type {Map<string, Promise<void>>} */
+  const photoLoads = new Map();
 
-  /** @returns {void} */
-  function render() {
+  /** @returns {Promise<void>} */
+  async function render() {
+    const version = ++renderVersion;
     const photo = photos[index];
+    setStatus('載入中…', true);
+    try {
+      await loadPhoto(photo.src);
+    } catch {
+      if (version === renderVersion) setStatus('載入失敗', false);
+      return;
+    }
+    if (version !== renderVersion) return;
     thumbnail.src = photo.src;
     thumbnail.alt = photo.alt;
     thumbnail.classList.toggle('album-cover', index === 0);
-    album.querySelector('.album-count').textContent = `${index + 1} / ${photos.length}`;
-    if (!dialog.open) return;
-    fullImage.src = photo.src;
-    fullImage.alt = photo.alt;
-    dialog.querySelector('.viewer-count').textContent = `${index + 1} / ${photos.length}`;
+    if (dialog.open) {
+      fullImage.src = photo.src;
+      fullImage.alt = photo.alt;
+    }
+    setStatus(`${index + 1} / ${photos.length}`, false);
+    for (const step of [-1, 1]) {
+      const neighbor = photos[(index + step + photos.length) % photos.length];
+      void loadPhoto(neighbor.src).catch(() => {});
+    }
+  }
+
+  /** @param {string} src @returns {Promise<void>} */
+  function loadPhoto(src) {
+    if (photoLoads.has(src)) return photoLoads.get(src);
+    const image = new Image();
+    image.src = src;
+    const loaded = image.decode().catch((error) => {
+      photoLoads.delete(src);
+      throw error;
+    });
+    photoLoads.set(src, loaded);
+    return loaded;
+  }
+
+  /** @param {string} text @param {boolean} busy @returns {void} */
+  function setStatus(text, busy) {
+    album.setAttribute('aria-busy', String(busy));
+    dialog.setAttribute('aria-busy', String(busy));
+    album.querySelector('.album-count').textContent = text;
+    dialog.querySelector('.viewer-count').textContent = text;
   }
 
   /** @param {number} step @returns {void} */

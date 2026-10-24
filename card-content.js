@@ -29,8 +29,8 @@ export const cardContent = {
     src: './assets/kuromi-two-brushes.png',
     alt: '同一隻手握著桃紅與螢光綠畫筆的庫洛米',
   },
-  photos: Array.from({ length: 44 }, (_, index) => ({
-    src: `./us/${String((index + 1) * 10).padStart(3, '0')}.jpg`,
+  photos: Array.from({ length: 45 }, (_, index) => ({
+    src: `./assets/photos/${String((index + 1) * 10).padStart(3, '0')}.webp`,
     alt: index === 0 ? '我們在作品前抱著花束的合照' : `我們的合照 ${index + 1}`,
   })),
 };
